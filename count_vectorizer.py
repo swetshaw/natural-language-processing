@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri May 14 23:06:17 2021
+Created on Sat May 15 19:13:54 2021
 
 @author: shaws
 """
-
+import re
 import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
@@ -16,8 +16,17 @@ The major reason for global warming is the burning of fossil fuel for energy. It
 sentences = nltk.sent_tokenize(paragraph)
 lemmatizer = WordNetLemmatizer()
 
+doc = []
 for i in range(len(sentences)):
-    words = nltk.word_tokenize(sentences[i])
-    words = [lemmatizer.lemmatize(word) for word in words if word not in set(stopwords.words('english'))]
-    sentences[i] = ' '.join(words)
+    review = re.sub('[^a-zA-Z]', ' ', sentences[i])
+    review = review.lower()
+    review = review.split()
+    review = [lemmatizer.lemmatize(word) for word in review if word not in set(stopwords.words('english'))]
+    review = ' '.join(review)
+    doc.append(review)
     
+from sklearn.feature_extraction.text import CountVectorizer
+cv = CountVectorizer()
+X = cv.fit_transform(doc).toarray()
+
+words_list = cv.get_feature_names()

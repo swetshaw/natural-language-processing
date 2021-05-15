@@ -7,3 +7,6 @@ Go through the concepts in following order
 1. Tokenization
 2. Stemming
 3. Lemmatization
+4. Word Vectorization
+    - CountVectorizer
+    - TF-IDF

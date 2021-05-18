@@ -10,3 +10,4 @@ Go through the concepts in following order
 4. Word Vectorization
     - CountVectorizer
     - TF-IDF
+5. Spam Classifier

@@ -11,3 +11,4 @@ Go through the concepts in following order
     - CountVectorizer
     - TF-IDF
 5. Spam Classifier
+6. Daily News Stock Price Prediction

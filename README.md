@@ -12,3 +12,4 @@ Go through the concepts in following order
     - TF-IDF
 5. Spam Classifier
 6. Daily News Stock Price Prediction
+7. Fake News Classifier
